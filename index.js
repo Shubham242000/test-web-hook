@@ -16,7 +16,6 @@ app.post('/webhook', (req, res) => {
     console.log("✅ Webhook received!");
   console.log("📦 Payload:", req.body);
 
-  // Send 200 OK to acknowledge
   res.status(200).send("Webhook received");
 })
 
