@@ -12,14 +12,11 @@ webhookEvents.on('push', (payload) => {
   console.log("📝 Commit message:", payload.head_commit.message);
 });
 
-webhookEvents.on('pull_request', (payload) => {
-  console.log("📂 Pull request opened by:", payload.sender.login);
-  console.log("🧾 PR title:", payload.pull_request.title);
-});
-
 app.post('/webhook', (req, res) => {
     //
-  console.log("Whole Request Object sent from GITHUB : ", req);
+  console.log("Headers from GitHub:", req.headers);
+  console.log("Payload from GitHub:", req.body);
+
   const eventType = req.headers['x-github-event']; // e.g., 'push'
   const payload = req.body;
 
