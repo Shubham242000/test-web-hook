@@ -28,3 +28,7 @@ app.post('/webhook', (req, res) => {
 
   res.status(200).send("Webhook received");
 });
+
+app.listen(3002 ,() => {
+    console.log('server is up')
+})
